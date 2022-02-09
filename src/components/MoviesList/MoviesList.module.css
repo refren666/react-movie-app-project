@@ -1,0 +1,23 @@
+.buttonsBlock {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.arrowButton svg {
+    fill: firebrick;
+    width: 25px;
+    cursor: pointer;
+}
+
+.arrowButton {
+    border: none;
+    background-color: white;
+}
+
+.moviesCardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 50px 0;
+}

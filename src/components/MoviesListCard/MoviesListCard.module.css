@@ -1,0 +1,19 @@
+.movieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movieTitle {
+    text-align: center;
+}
+
+.moviePoster img {
+    transition: all .2s ease-in-out;
+}
+
+.moviePoster img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
