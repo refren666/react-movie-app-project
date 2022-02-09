@@ -32,7 +32,7 @@ const MoviesList = () => {
     }
   )
 
-  // dispatch(setMovies(combineMoviesWithGenres))
+  dispatch(setMovies(combineMoviesWithGenres))
 
   console.log(combineMoviesWithGenres)
 
@@ -44,7 +44,7 @@ const MoviesList = () => {
         gap: '10px',
         margin: '50px 0'
       }}>
-        {combineMoviesWithGenres.map(
+        {movies.map(
           movie => <MoviesListCard key={movie.id} movieInfo={movie}/>
         )}
       </div>
