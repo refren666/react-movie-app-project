@@ -1,0 +1,11 @@
+.actorName {
+    max-width: 200px;
+    text-align: center;
+}
+
+.actorPhoto {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 7px;
+}

@@ -1,0 +1,19 @@
+.reviewBlock {
+    display: flex;
+    column-gap: 25px;
+}
+
+.userPhoto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%
+}
+
+.rating {
+    background-color: gold;
+    border-radius: 5px;
+}
+
+.reviewContent {
+    padding-top: 35px;
+}

@@ -1,15 +1,16 @@
 import React from 'react';
-
-import styles from './MoviesListCard.module.css'
 import {Link} from "react-router-dom";
 
-const MoviesListCard = ({movieInfo}) => {
+import styles from "../MoviesListCard/MoviesListCard.module.css";
+
+const MoviesByGenreCard = ({movieInfo}) => {
   const {
     id, original_title, vote_average, vote_count, poster_path
   } = movieInfo;
 
+
   return (
-    <div className={styles.movieCard}>
+    <div>
       <Link to={`/movie/${id}`} className={styles.moviePoster}>
         <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={`${original_title} poster`}/>
       </Link>
@@ -20,4 +21,4 @@ const MoviesListCard = ({movieInfo}) => {
   );
 };
 
-export default MoviesListCard;
+export default MoviesByGenreCard;

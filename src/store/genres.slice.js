@@ -1,8 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {genresService} from "../services/genres.service";
+import {moviesService} from "../services/movies.service";
 
 const initialState = {
-  movieGenres: []
+  movieGenres: [],
+  moviesByGenre: [],
+  currentPage: 1
 }
 
 export const getGenres = createAsyncThunk(
@@ -13,18 +16,40 @@ export const getGenres = createAsyncThunk(
   }
 )
 
+export const getMoviesByGenreId = createAsyncThunk(
+  'moviesSlice/getMoviesByGenre',
+  async (id, {dispatch, getState}) => {
+    const newMoviesByGenre = [];
+    const {currentPage} = getState().genres
+    const {results} = await moviesService.getByGenreId(id, currentPage)
+    results.forEach(result => newMoviesByGenre.push(result))
+    dispatch(setMoviesByGenre(newMoviesByGenre))
+    dispatch(moveToNextPage());
+  }
+)
+
 const genresSlice = createSlice({
   name: 'genresSlice',
   initialState,
   reducers: {
     setGenres: (state, action) => {
       state.movieGenres = action.payload;
+    },
+    setMoviesByGenre: (state, action) => {
+      state.moviesByGenre.push(...action.payload);
+    },
+    moveToNextPage: (state) => {
+      state.currentPage += 1;
+    },
+    resetMoviesByGenreAndPage: (state) => {
+      state.currentPage = 1;
+      state.moviesByGenre.length = 0;
     }
   }
 })
 
 const genresReducer = genresSlice.reducer;
 
-export const {setGenres} = genresSlice.actions;
+export const {setGenres, setMoviesByGenre, moveToNextPage, resetMoviesByGenreAndPage} = genresSlice.actions;
 
 export default genresReducer;
