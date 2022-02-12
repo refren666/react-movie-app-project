@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {getMovies, resetMoviesAndPage} from "../../store/movies.slice";
-import MoviesListCard from "../MoviesListCard/MoviesListCard";
+import MoviesListCard from "../../components/MoviesListCard/MoviesListCard";
 import styles from './MoviesList.module.css'
 
 const MoviesList = () => {

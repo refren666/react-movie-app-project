@@ -43,7 +43,7 @@ const genresSlice = createSlice({
     },
     resetMoviesByGenreAndPage: (state) => {
       state.currentPage = 1;
-      state.moviesByGenre.length = 0;
+      state.moviesByGenre = [];
     }
   }
 })

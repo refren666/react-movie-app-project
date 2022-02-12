@@ -5,7 +5,7 @@ import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import MovieInfo from "./components/MovieInfo/MovieInfo";
 import './App.css';
 import MovieByGenrePage from "./pages/MovieByGenrePage/MovieByGenrePage";
-import MoviesList from "./components/MoviesList/MoviesList";
+import MoviesList from "./pages/MoviesList/MoviesList";
 
 const App = () => {
   return (
