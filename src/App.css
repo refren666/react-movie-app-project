@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+    --background: white;
+    --text-primary: black;
+}
+[data-theme='dark'] {
+    --background: black;
+    --text-primary: white;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -8,4 +17,37 @@
 
 body {
     font-family: "Poppins", sans-serif;
+}
+
+.app {
+    color: var(--text-primary);
+    background-color: var(--background);
+    font-size: large;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.returnLink {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: .5s all ease-in-out;
+    margin-left: 10px;
+}
+
+.returnLink:hover {
+    font-size: 1.05rem;
+    color: grey;
+}
+
+.switchButton {
+    color: var(--text-primary);
+    background-color: var(--background);
+    border: 2px var(--text-primary) solid;
+    float: right;
+    transition: all .5s;
+}
+
+.logo {
+    fill: var(--text-primary);
+    width: 50px;
 }

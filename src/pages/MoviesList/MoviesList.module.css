@@ -1,23 +1,28 @@
-.buttonsBlock {
-    display: flex;
-    justify-content: center;
-    column-gap: 20px;
-}
-
-.arrowButton svg {
-    fill: firebrick;
-    width: 25px;
-    cursor: pointer;
-}
-
-.arrowButton {
-    border: none;
-    background-color: white;
-}
-
 .moviesCardContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 50px 0;
+}
+
+.btnBlock {
+    display: flex;
+    justify-content: center;
+    column-gap: 35px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: firebrick;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 11px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: gold;
+    color: black;
 }

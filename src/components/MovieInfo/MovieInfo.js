@@ -25,8 +25,8 @@ const MovieInfo = () => {
   }, [])
 
   return (
-    <div>
-      <Link to={'/'}>Back to movies</Link>
+    <div className={styles.movieContainer}>
+      <Link className={'returnLink'} to={'/'}>&#8249; Back to movies</Link>
 
       <div className={styles.movieBlock}>
         <div>
@@ -42,7 +42,7 @@ const MovieInfo = () => {
           <h4>Runtime: {runtime} min</h4>
           <h4>Tagline: {tagline}</h4>
           <h4>Released: {release_date}</h4>
-          <h4>Vote average: {vote_average}</h4>
+          <h4>Vote average: {vote_average} &#10032;</h4>
           <h4>Votes: {vote_count}</h4>
           <div>
             <h4>Overview: </h4>

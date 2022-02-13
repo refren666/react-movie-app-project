@@ -1,32 +1,42 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getMovies, resetMoviesAndPage} from "../../store/movies.slice";
+import {getMovies, setFetchingTrue} from "../../store/movies.slice";
 import MoviesListCard from "../../components/MoviesListCard/MoviesListCard";
+import Loader from "../../components/Loader/Loader";
 import styles from './MoviesList.module.css'
 
 const MoviesList = () => {
-  const {movies} = useSelector(state => state.movies)
+  const {movies, status, error, fetching} = useSelector(state => state.movies)
+  const {movieGenre} = useSelector(state => state.genres)
   const dispatch = useDispatch();
 
-  const handleScroll = (e) => {
-    const scrollHeight = e.target.documentElement.scrollHeight;
-    const currentHeight = Math.ceil(
-      e.target.documentElement.scrollTop + window.innerHeight
-    );
-    if (currentHeight >= scrollHeight) {
-      dispatch(getMovies())
+  useEffect(() => {
+    if (fetching) {
+      console.log('fetching')
+      dispatch(getMovies(movieGenre))
     }
-  }
+  }, [fetching, movies])
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(resetMoviesAndPage())
-    dispatch(getMovies())
-    window.addEventListener('scroll', handleScroll)
+    document.addEventListener('scroll', scrollHandler)
+
+    return function () {
+      document.removeEventListener('scroll', scrollHandler)
+    }
   }, [])
 
-  console.log(movies)
+  // console.log(movies)
+
+  const scrollHandler = (e) => {
+    const scrollHeight = e.target.documentElement.scrollHeight;
+    const currentHeight = e.target.documentElement.scrollTop + window.innerHeight
+
+    if (scrollHeight - currentHeight < 100) {
+      dispatch(setFetchingTrue())
+    }
+  }
 
   // const combineMoviesWithGenres = movies.map(movie => {
   //     const {genre_ids} = movie; // [id, id, id]
@@ -37,15 +47,14 @@ const MoviesList = () => {
   // )
 
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '10px',
-      margin: '50px 0'
-    }}>
-      {movies.map(
-        (movie, index) => <MoviesListCard key={index} movieInfo={movie}/>
-      )}
+    <div>
+      {status === 'pending' && <Loader/>}
+      {error && <h2>{error}</h2>}
+      <div className={styles.moviesCardContainer}>
+        {movies.map(
+          (movie, index) => <MoviesListCard key={index} movieInfo={movie}/>
+        )}
+      </div>
     </div>
   );
 };

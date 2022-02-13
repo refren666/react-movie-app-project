@@ -1,11 +1,12 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 
+
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import MovieInfo from "./components/MovieInfo/MovieInfo";
-import './App.css';
-import MovieByGenrePage from "./pages/MovieByGenrePage/MovieByGenrePage";
 import MoviesList from "./pages/MoviesList/MoviesList";
+import './App.css';
+import SearchMoviesList from "./pages/SearchMoviesList/SearchMoviesList";
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Route path={'/'} element={<MoviesPage/>}>
         <Route index element={<MoviesList/>}/>
         <Route path={'/movie/:movieId'} element={<MovieInfo/>}/>
-        <Route path={'/movie/genre/:genreId'} element={<MovieByGenrePage/>}/>
+        <Route path={'/search/:searchingWord'} element={<SearchMoviesList/>}/>
       </Route>
     </Routes>
   );

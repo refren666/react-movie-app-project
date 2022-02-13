@@ -1,6 +1,7 @@
 .reviewBlock {
     display: flex;
     column-gap: 25px;
+    margin: 25px 0;
 }
 
 .userPhoto {

@@ -1,6 +1,8 @@
 .actorName {
     max-width: 200px;
     text-align: center;
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .actorPhoto {
