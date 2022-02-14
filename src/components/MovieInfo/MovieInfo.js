@@ -5,11 +5,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {getMovie, getMovieCredits, getMovieReviews} from "../../store/movies.slice";
 import Review from "../Review/Review";
 import Credit from "../Credit/Credit";
-import styles from './MovieInfo.module.css'
-import poster from '../../images/default_poster.jpg'
 import Trailer from "../Trailer/Trailer";
 import Loader from "../Loader/Loader";
 import GenreBadge from "../GenreBadge/GenreBadge";
+import styles from './MovieInfo.module.css'
+import poster from '../../images/default_poster.jpg'
 
 const MovieInfo = () => {
   const movieId = useParams();

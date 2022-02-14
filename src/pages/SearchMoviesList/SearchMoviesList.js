@@ -36,10 +36,10 @@ const SearchMoviesList = () => {
   console.log(results)
 
   return (
-    <div>
-      <div>
-        {status === 'pending' && <Loader/>}
-        {error && <h2>{error}</h2>}
+    <div className={styles.moviesContainer}>
+      {status === 'pending' && <Loader/>}
+      {error && <h2>{error}</h2>}
+      {results?.length > 0 ? <div>
         <div className={styles.moviesCardContainer}>
           {results && results.map(
             (movie, index) => <MoviesListCard key={index} movieInfo={movie}/>
@@ -49,7 +49,7 @@ const SearchMoviesList = () => {
           <button className={styles.button} onClick={moveBack}>Back</button>
           <button className={styles.button} onClick={moveNext}>Next</button>
         </div>
-      </div>
+      </div> : <h2>No movies found 😥</h2>}
     </div>
   );
 };

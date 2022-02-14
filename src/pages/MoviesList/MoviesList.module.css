@@ -1,3 +1,7 @@
+.moviesContainer {
+    min-height: calc(100vh - 139px);
+}
+
 .moviesCardContainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

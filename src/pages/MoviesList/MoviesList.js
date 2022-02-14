@@ -45,7 +45,7 @@ const MoviesList = () => {
   // )
 
   return (
-    <div>
+    <div className={styles.moviesContainer}>
       {status === 'pending' && <Loader/>}
       {error && <h2>{error}</h2>}
       <div className={styles.moviesCardContainer}>
