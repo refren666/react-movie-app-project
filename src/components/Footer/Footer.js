@@ -1,11 +1,10 @@
 import React from 'react';
 
+import styles from './Footer.module.css'
+
 const Footer = () => {
   return (
-    <div style={{
-      textAlign: 'center',
-      background: 'gold'
-    }}>
+    <div className={styles.footer}>
       &copy; 2022 Lorem ipsum movies. All rights reserved.
     </div>
   );

@@ -1,11 +1,11 @@
 import React from 'react';
 
+import styles from './GenreBadge.module.css'
+
 const GenreBadge = ({genre}) => {
-  // console.log(name)
-
   return (
-    <div>
-
+    <div className={styles.genreItem}>
+      {genre.name}
     </div>
   );
 };

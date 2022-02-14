@@ -18,3 +18,8 @@
 .reviewContent {
     padding-top: 35px;
 }
+
+.reviewIntro,
+.reviewContent {
+    font-weight: normal;
+}

@@ -16,6 +16,50 @@
     row-gap: 10px;
 }
 
+.star {
+    color: gold;
+}
+
+.overview {
+    font-weight: normal;
+}
+
 .movieContainer {
-    margin-top: 20px;
+    padding-top: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.creditsBlock {
+    display: flex;
+    overflow-y: auto;
+    column-gap: 10px;
+}
+
+.trailerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.genresBlock {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.trailerText {
+    align-self: start;
+}
+
+.reviewBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+
+.actorsHeading,
+.trailersHeading,
+.reviewsHeading {
+    margin-top: 15px;
 }

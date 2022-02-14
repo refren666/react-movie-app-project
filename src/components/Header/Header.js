@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import UserInfo from "../UserInfo/UserInfo";
 import {getGenres, setMovieGenre} from "../../store/genres.slice";
 import {getMovies, resetMoviesAndPage} from "../../store/movies.slice";
-import {setSearchWord} from "../../store/searchMovie.slice";
+import {resetCurrentPage, setSearchWord} from "../../store/searchMovie.slice";
 import styles from './Header.module.css'
 
 const Header = ({theme, switchTheme}) => {
@@ -24,6 +24,7 @@ const Header = ({theme, switchTheme}) => {
 
     navigate(`/search/${e.target.keyword.value}`)
     dispatch(setSearchWord(''))
+    dispatch(resetCurrentPage())
   }
 
   const onSearchInput = (e) => {

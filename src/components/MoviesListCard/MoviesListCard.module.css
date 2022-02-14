@@ -11,6 +11,8 @@
 
 .moviePoster img {
     transition: all .2s ease-in-out;
+    object-fit: cover;
+    height: 450px;
 }
 
 .moviePoster img:hover {

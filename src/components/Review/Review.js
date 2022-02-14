@@ -26,7 +26,7 @@ const Review = ({review}) => {
           : null
         }
         </h3>
-        <p>Written by <em>{author}</em> on {reviewDate}</p>
+        <p className={styles.reviewIntro}>Written by <em>{author}</em> on {reviewDate}</p>
         <p className={styles.reviewContent}>{content}</p>
       </div>
 

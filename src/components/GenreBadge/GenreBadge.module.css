@@ -1,0 +1,6 @@
+.genreItem {
+    border: 2px solid firebrick;
+    border-radius: 15px;
+    padding: 4px 8px;
+    white-space: nowrap;
+}

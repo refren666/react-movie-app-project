@@ -16,9 +16,9 @@ export const getMoviesByInput = createAsyncThunk(
     // debugger
     try {
       const {currentPage} = getState().moviesBySearch;
-      const {results} = await moviesService.getBySearchInput(input, currentPage)
+      const data = await moviesService.getBySearchInput(input, currentPage)
 
-      return results;
+      return data;
     } catch (e) {
       rejectWithValue(e.message)
     }
@@ -37,7 +37,10 @@ const searchMovieSlice = createSlice({
     },
     setSearchWord: (state, action) => {
       state.searchWord = action.payload;
-    }
+    },
+    resetCurrentPage: (state) => {
+      state.currentPage = 1;
+}
   },
   extraReducers: {
     [getMoviesByInput.pending]: (state) => {
@@ -57,6 +60,6 @@ const searchMovieSlice = createSlice({
 
 const searchMovieReducer = searchMovieSlice.reducer;
 
-export const {setSearchWord} = searchMovieSlice.actions;
+export const {setSearchWord, moveToNextPage, moveToPreviousPage, resetCurrentPage} = searchMovieSlice.actions;
 
 export default searchMovieReducer;

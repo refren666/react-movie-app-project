@@ -27,8 +27,6 @@ const MoviesList = () => {
     }
   }, [])
 
-  // console.log(movies)
-
   const scrollHandler = (e) => {
     const scrollHeight = e.target.documentElement.scrollHeight;
     const currentHeight = e.target.documentElement.scrollTop + window.innerHeight

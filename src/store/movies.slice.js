@@ -3,7 +3,6 @@ import {moviesService} from "../services/movies.service";
 
 const initialState = {
   movies: [],
-  moviesBySearchQuery: [],
   credits: [],
   movie: {},
   reviews: [],
@@ -104,9 +103,8 @@ const moviesSlice = createSlice({
       state.status = 'pending';
       state.error = null;
     },
-    [getMovie.fulfilled]: (state, action) => {
-      state.status = 'fulfilled';
-
+    [getMovie.fulfilled]: (state) => {
+      state.status = 'fulfilled'
     },
     [getMovie.rejected]: (state, action) => {
       state.status = 'rejected';
