@@ -40,6 +40,13 @@
     font-size: 20px;
 }
 
+.select {
+    background-color: white !important;
+    color: black !important;
+    width: 150px;
+    height: 30px;
+}
+
 /*Resize the wrap to see the search bar change!*/
 .searchWrap {
 

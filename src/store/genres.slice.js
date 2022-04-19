@@ -1,21 +1,21 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {genresService} from "../services/genres.service";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { genresService } from "../services/genres.service";
 
 const initialState = {
   movieGenres: [],
-  movieGenre: ''
-}
+  movieGenre: "",
+};
 
 export const getGenres = createAsyncThunk(
-  'genresSlice/getGenres',
-  async (_, {dispatch}) => {
-    const {genres} = await genresService.getAll();
-    dispatch(setGenres(genres))
+  "genresSlice/getGenres",
+  async (_, { dispatch }) => {
+    const { genres } = await genresService.getAll();
+    dispatch(setGenres(genres));
   }
-)
+);
 
 const genresSlice = createSlice({
-  name: 'genresSlice',
+  name: "genresSlice",
   initialState,
   reducers: {
     setGenres: (state, action) => {
@@ -23,12 +23,12 @@ const genresSlice = createSlice({
     },
     setMovieGenre: (state, action) => {
       state.movieGenre = action.payload;
-    }
-  }
-})
+    },
+  },
+});
 
 const genresReducer = genresSlice.reducer;
 
-export const {setGenres, setMovieGenre} = genresSlice.actions;
+export const { setGenres, setMovieGenre } = genresSlice.actions;
 
 export default genresReducer;
