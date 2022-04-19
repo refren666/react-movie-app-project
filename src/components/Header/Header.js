@@ -78,7 +78,6 @@ const Header = ({ theme, switchTheme }) => {
       <div>
         <label>
           Genre: &nbsp;
-          {/* <FormControl> */}
           <Select
             className={styles.select}
             name="Genres"
@@ -101,27 +100,6 @@ const Header = ({ theme, switchTheme }) => {
               );
             })}
           </Select>
-          {/* </FormControl> */}
-          {/* <select
-            name="Genres"
-            ref={selectBox}
-            onChange={(e) => {
-              navigate("/");
-              dispatch(setMovieGenre(""));
-              dispatch(resetMoviesAndPage());
-              dispatch(setMovieGenre(e.target.value));
-              dispatch(getMovies(e.target.value));
-            }}
-          >
-            <option value="">All</option>
-            {movieGenres.map((genre) => {
-              return (
-                <option key={genre.id} value={genre.id}>
-                  {genre.name}
-                </option>
-              );
-            })}
-          </select> */}
         </label>
       </div>
 
