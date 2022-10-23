@@ -3,19 +3,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    row-gap: 5px;
+    width: 300px;
+    margin-bottom: 16px;
 }
 
 .movieTitle {
     text-align: center;
 }
 
+.text {
+    font-size: 0.95rem;
+}
+
 .moviePoster img {
     transition: all .2s ease-in-out;
-    object-fit: cover;
-    height: 450px;
+    object-fit: contain;
+    height: 350px;
 }
 
 .moviePoster img:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.genresWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 7px;
+    row-gap: 7px;
+    justify-content: center;
 }

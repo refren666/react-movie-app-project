@@ -1,0 +1,13 @@
+.trailersHeading {
+  margin-top: 24px;
+}
+
+.trailerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.trailerText {
+    align-self: start;
+}

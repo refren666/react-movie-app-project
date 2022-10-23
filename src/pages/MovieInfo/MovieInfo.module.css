@@ -1,0 +1,10 @@
+.returnLink {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+    margin-left: 10px;
+}
+
+.returnLink:hover {
+    color: grey;
+}

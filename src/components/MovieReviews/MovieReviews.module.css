@@ -1,0 +1,9 @@
+.reviewsHeading {
+    margin-top: 24px;
+}
+
+.reviewBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}

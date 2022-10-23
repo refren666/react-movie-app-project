@@ -1,0 +1,33 @@
+.movieBlock {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.movieHeading {
+    max-width: 400px;
+    text-align: center;
+}
+
+.genresBlock {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.movieData {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.star {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.overview {
+    font-weight: normal;
+}
